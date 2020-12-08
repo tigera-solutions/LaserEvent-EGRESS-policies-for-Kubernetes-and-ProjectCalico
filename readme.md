@@ -129,7 +129,7 @@ spec:
   types:
     - Egress
   egress:    
-    - action: Accept
+    - action: Allow
       destination:
         selector: role == "api-global"
 EOF
