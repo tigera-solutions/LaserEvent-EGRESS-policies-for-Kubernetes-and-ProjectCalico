@@ -98,7 +98,7 @@ EOF
 calicoctl apply -n my-demo-app -f deny-external-api.yaml
 ```
 
-### 4. Deny Egress access via Calico Global Network sets
+### 4. Accept Egress access via Calico Global Network sets
 ```
 cat >global-networkset-external-api.yaml <<EOF
 apiVersion: projectcalico.org/v3
@@ -129,7 +129,7 @@ spec:
   types:
     - Egress
   egress:    
-    - action: Deny
+    - action: Accept
       destination:
         selector: role == "api-global"
 EOF
